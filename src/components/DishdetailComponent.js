@@ -42,20 +42,16 @@ class DishDetail extends Component {
   }
 
   render() {
-    if (this.props.dish !== undefined) {
-      return (
-        <div className="container">
-          <div className="row">
-            {this.renderDish(this.props.dish)}
-            {this.renderComments(this.props.dish.comments)}
-          </div>
+    if (this.props.dish === undefined) return <div></div>;
+
+    return (
+      <div className="container">
+        <div className="row">
+          {this.renderDish(this.props.dish)}
+          {this.renderComments(this.props.dish.comments)}
         </div>
-      );
-    } else {
-      return (
-        <div></div>
-      );
-    }
+      </div>
+    );
   }
 }
 
