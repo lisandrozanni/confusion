@@ -11,14 +11,20 @@ import {
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
-  state = {
-    isNavOpen: false
-  };
+  constructor(props) {
+    super(props);
 
-  toggleNav() {
-    this.setState({
-      isNavOpen: !this.state.isNavOpen
-    });
+    this.state = {
+      isNavOpen: false
+    };
+
+    this.toggleNav = function() {
+      this.setState({
+        isNavOpen: !this.state.isNavOpen
+      });
+    }
+
+    this.toggleNav = this.toggleNav.bind(this);
   }
 
   render() {
