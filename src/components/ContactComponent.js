@@ -54,7 +54,7 @@ class Contact extends Component {
 		console.log('Current State is: ' + JSON.stringify(values));
 		alert('Current State is: ' + JSON.stringify(values));
 		// event.preventDefault();
-}
+	}
 
 	validate(firstname, lastname, telnum, email) {
 		const errors = {
@@ -226,7 +226,7 @@ handleBlur = (field) => (evt) => {
 								</Col>
 							</Row>
 							<Row className="form-group">
-								<Col md={{size: 6, offset: 2}}>
+								<Col md={{size: 7, offset: 2}}>
 									<div className="form-check">
 										<Label check>
 											<Control.checkbox model=".agree" name="agree"
@@ -236,7 +236,7 @@ handleBlur = (field) => (evt) => {
 										</Label>
 									</div>
 								</Col>
-								<Col md={{size: 3, offset: 1}}>
+								<Col md={3}>
 									<Control.select model=".contactType" name="contactType"
 										className="form-control">
 										<option>Tel.</option>
