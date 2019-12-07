@@ -34,7 +34,7 @@ function RenderDish({ dish }) {
   );
 }
 
-function RenderComments({ comments, addComment, dishId }) {
+function RenderComments({ comments, postComment, dishId }) {
   return (
     <div className="col-12 col-md-5 m-1">
       <ul className="list-unstyled">
@@ -48,7 +48,7 @@ function RenderComments({ comments, addComment, dishId }) {
               </li>
             );
           })}
-          <CommentForm dishId={dishId} addComment={addComment} />
+          <CommentForm dishId={dishId} postComment={postComment} />
       </ul>
     </div>
   );
@@ -74,7 +74,7 @@ class CommentForm extends Component {
 
   handleLogin = values => {
     this.toggleModal();
-    this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
+    this.props.postComment(this.props.dishId, values.rating, values.name, values.comment);
   }
   
   render() {
@@ -139,7 +139,7 @@ class CommentForm extends Component {
   }
 }
 
-function DishDetail({ dish, comments, addComment, isLoading, errMess }) {
+function DishDetail({ dish, comments, postComment, isLoading, errMess }) {
   if (dish === undefined) return <div></div>;
 
   if (isLoading) {
@@ -176,7 +176,7 @@ function DishDetail({ dish, comments, addComment, isLoading, errMess }) {
         <RenderDish dish={dish} />
         <RenderComments
           comments={comments}
-          addComment={addComment}
+          postComment={postComment}
           dishId={dish.id}
         />
       </div>
